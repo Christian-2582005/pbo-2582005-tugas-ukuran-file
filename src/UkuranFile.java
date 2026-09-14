@@ -16,7 +16,7 @@ public class UkuranFile {
         String namaFile = scanner.nextLine();
 
         System.out.print("Ukuran (byte) : ");
-        int ukuranByte = scanner.nextInt();
+        long ukuranByte = scanner.nextLong();
 
         System.out.println(namaFile + " - " + ukuranByte);
 
