@@ -1,15 +1,32 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class UkuranFile {
+
+    static final double SATU_KB = 1024.0;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Percobaan pertama: ukuran file ditampung pakai int
+        // int ukuranByte = scanner.nextInt();
+        // hasil jadi negatif kalau dipaksa cast
+        // 3 GB saja sudah 3.221.225.472 byte, jadi wajib pakai long.
+
+        System.out.print("Nama file : ");
+        String namaFile = scanner.nextLine();
+
+        System.out.print("Ukuran (byte) : ");
+        int ukuranByte = scanner.nextInt();
+
+        System.out.println(namaFile + " - " + ukuranByte);
+
+        double ukuranKB = ukuranByte / SATU_KB;
+        double ukuranMB = ukuranKB / SATU_KB;
+        double ukuranGB = ukuranMB / SATU_KB;
+
+        System.out.println(ukuranKB + " KB");
+        System.out.println(ukuranMB + " MB");
+        System.out.println(ukuranGB + " GB");
+
     }
 }
